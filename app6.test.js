@@ -4,30 +4,18 @@
 //     });
 // });
 
-import SortedList from '../index.js';
 
-describe('SortedList', () => {
+import {FindMaxConsecutive1s} from './app6.js';
 
-  let sl;
-
-  beforeEach(()=>{
-    sl = new SortedList();
-  })
-
-  describe('Constructor', () => {
-    test('should create an empty SortedList', () => {
-      const sl = new SortedList();
-      expect(sl instanceof SortedList).toBe(true);
+  describe('Max Consecutive 1s', () => {
+    test('arr[1,1,"1",0] should be 3', () => {
+      let arr = [1,1,"1",0];
+      expect(FindMaxConsecutive1s(arr)).toBe(3);
     });
-    test('should have a property items', () => {
-      const sl = new SortedList();
-      expect(sl.items).toBeDefined();
+  
+    test('arr[1,"e",1,0] should be -1', () => {
+      let arr = [1,'e',1,0];
+      expect(()=>FindMaxConsecutive1s(arr)).toThrow(Error(-1));
     });
-    test('should have a property length', () => {
-      const sl = new SortedList();
-      expect(sl.length).toBeDefined();
-    });
-    
   });
 
-});
